@@ -1,9 +1,9 @@
 import { Buttonbb } from 'ui'
 
-export default function Docs() {
+export default function Web() {
   return (
     <div>
-      <h1>Docs</h1>
+      <h1 className="text-red-500">Web</h1>
       <Buttonbb />
     </div>
   )
