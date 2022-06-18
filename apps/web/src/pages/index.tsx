@@ -1,10 +1,10 @@
-import { Button } from 'ui'
+import { Buttonbb } from 'ui'
 
 export default function Web() {
   return (
     <div>
       <h1 className="text-red-500">Web</h1>
-      <Button />
+      <Buttonbb />
     </div>
   )
 }
