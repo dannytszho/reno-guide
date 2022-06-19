@@ -1,10 +1,8 @@
 import { Buttonbb } from 'ui'
+import LongButton from 'ui/LongButton'
 
-export default function Web() {
-  return (
-    <div>
-      <h1 className="text-red-500">Web</h1>
-      <Buttonbb />
-    </div>
-  )
+const Home = () => {
+  return <LongButton />
 }
+
+export default Home
