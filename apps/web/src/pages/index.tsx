@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Nevada from '../public/Nevada.png'
 import { LongButton } from 'ui/Button'
 import { SquareButton } from 'ui/Button'
+import { CollapseButton } from 'ui/Button'
 import BeerIcon from '../public/svg/BeerIcon'
 import DiningIcon from '../public/svg/DiningIcon'
 import PoolBallIcon from '../public/svg/PoolBallIcon'
@@ -20,16 +21,20 @@ const Home: NextPage = () => {
         <div className="flex justify-center mt-20">
           <Image src={Nevada} alt="main" />
         </div>
-        <h2 className="flex justify-center font-iceland text-2xl">
+        <h2 className="flex justify-center font-iceland text-2xl m-2">
           · Reno · Lake Tahoe ·
         </h2>
       </div>
       <section className="grid gap-4 justify-center m-10">
-        <LongButton>
-          <div className="p-3">
+        <p className="flex justify-center font-iceland text-2xl m-2 whitespace-pre">
+          ↓{'  '}Food & Drinks{'  '}↓
+        </p>
+
+        <div className="collapse">
+          <CollapseButton>
             <BeerIcon />
-          </div>
-        </LongButton>
+          </CollapseButton>
+        </div>
         <LongButton>
           <div className="p-3">
             <DiningIcon />
