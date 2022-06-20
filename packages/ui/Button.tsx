@@ -21,7 +21,7 @@ export const CollapseButton = ({
   details,
 }: {
   children: React.ReactNode
-  details: React.ReactNode
+  details: any
 }) => {
   return (
     <div className="collapse collapse-arrow w-[355px] md:w-[650px] border bg-zinc-200 rounded-lg hover:">

@@ -9,6 +9,34 @@ import PoolBallIcon from '../public/svg/PoolBallIcon'
 import type { NextPage } from 'next'
 import UploadIcon from '../public/svg/UploadIcon'
 import Details from 'ui/Details'
+import Depot from '../public/TheDepot.png'
+
+const detailsMap = [
+  {
+    name: 'The Depot',
+    icon: <BeerIcon />,
+    pic: Depot,
+    address: '325 E. 4TH STREET RENO, NV 89512',
+    addressUrl:
+      'https://www.google.com/maps/place/The+Depot+Craft+Brewery+%26+Distillery/@39.531084,-119.811749,17z/data=!3m1!4b1!4m5!3m4!1s0x8099474a497e4dd5:0x47738ce5eaae0fda!8m2!3d39.531084!4d-119.809555',
+    phone: '+17757374330',
+    phoneDisplay: '775-737-4330',
+    hypeLink: 'https://www.thedepotreno.com/',
+    hypeLinkDisplay: 'thedepotreno.com',
+  },
+  {
+    name: 'Louis Basque corner',
+    icon: <DiningIcon />,
+    pic: Depot,
+    address: '325 E. 4TH STREET RENO, NV 89512',
+    addressUrl:
+      'https://www.google.com/maps/place/The+Depot+Craft+Brewery+%26+Distillery/@39.531084,-119.811749,17z/data=!3m1!4b1!4m5!3m4!1s0x8099474a497e4dd5:0x47738ce5eaae0fda!8m2!3d39.531084!4d-119.809555',
+    phone: '+17757374330',
+    phoneDisplay: '775-737-4330',
+    hypeLink: 'https://www.thedepotreno.com/',
+    hypeLinkDisplay: 'thedepotreno.com',
+  },
+]
 
 const Home: NextPage = () => {
   return (
@@ -31,12 +59,26 @@ const Home: NextPage = () => {
           ↓{'  '}Food & Drinks{'  '}↓
         </p>
 
-        <CollapseButton details={<Details />}>
-          <div className="flex">
-            <BeerIcon />
-            <h2 className="text-2xl mx-auto">The Depot</h2>
-          </div>
-        </CollapseButton>
+        {detailsMap.map(place => (
+          <CollapseButton
+            details={
+              <Details
+                pic={place.pic}
+                address={place.address}
+                addressUrl={place.addressUrl}
+                phone={place.phone}
+                phoneDisplay={place.phoneDisplay}
+                hypeLink={place.hypeLink}
+                hypeLinkDisplay={place.hypeLinkDisplay}
+              />
+            }
+          >
+            <div className="flex">
+              {place.icon}
+              <h2 className="text-2xl mx-auto">{place.name}</h2>
+            </div>
+          </CollapseButton>
+        ))}
 
         <LongButton>
           <div className="p-3">
