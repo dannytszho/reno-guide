@@ -17,27 +17,30 @@ const Home: NextPage = () => {
             <UploadIcon />
           </SquareButton>
         </div>
-        <div className="mt-36 m-12">
+        <div className="flex justify-center mt-20">
           <Image src={Nevada} alt="main" />
         </div>
-        <div className="flex flex-col gap-4 mt-20 m-5">
-          <LongButton>
-            <div className="p-3">
-              <BeerIcon />
-            </div>
-          </LongButton>
-          <LongButton>
-            <div className="p-3">
-              <DiningIcon />
-            </div>
-          </LongButton>
-          <LongButton>
-            <div className="p-3">
-              <PoolBallIcon />
-            </div>
-          </LongButton>
-        </div>
+        <h2 className="flex justify-center font-iceland text-2xl">
+          · Reno · Lake Tahoe ·
+        </h2>
       </div>
+      <section className="grid gap-4 justify-center m-10">
+        <LongButton>
+          <div className="p-3">
+            <BeerIcon />
+          </div>
+        </LongButton>
+        <LongButton>
+          <div className="p-3">
+            <DiningIcon />
+          </div>
+        </LongButton>
+        <LongButton>
+          <div className="p-3">
+            <PoolBallIcon />
+          </div>
+        </LongButton>
+      </section>
     </>
   )
 }
