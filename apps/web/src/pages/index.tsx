@@ -8,6 +8,7 @@ import DiningIcon from '../public/svg/DiningIcon'
 import PoolBallIcon from '../public/svg/PoolBallIcon'
 import type { NextPage } from 'next'
 import UploadIcon from '../public/svg/UploadIcon'
+import Details from 'ui/Details'
 
 const Home: NextPage = () => {
   return (
@@ -30,11 +31,13 @@ const Home: NextPage = () => {
           ↓{'  '}Food & Drinks{'  '}↓
         </p>
 
-        <div className="collapse">
-          <CollapseButton>
+        <CollapseButton details={<Details />}>
+          <div className="flex">
             <BeerIcon />
-          </CollapseButton>
-        </div>
+            <h2 className="font-iceland text-2xl mx-auto">The Depot</h2>
+          </div>
+        </CollapseButton>
+
         <LongButton>
           <div className="p-3">
             <DiningIcon />
