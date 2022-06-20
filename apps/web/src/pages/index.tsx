@@ -26,15 +26,15 @@ const Home: NextPage = () => {
           · Reno · Lake Tahoe ·
         </h2>
       </div>
-      <section className="grid gap-4 justify-center m-10">
-        <p className="flex justify-center font-iceland text-2xl m-2 whitespace-pre">
+      <section className="grid gap-4 justify-center m-10 font-iceland">
+        <p className="flex justify-center text-2xl m-2 whitespace-pre">
           ↓{'  '}Food & Drinks{'  '}↓
         </p>
 
         <CollapseButton details={<Details />}>
           <div className="flex">
             <BeerIcon />
-            <h2 className="font-iceland text-2xl mx-auto">The Depot</h2>
+            <h2 className="text-2xl mx-auto">The Depot</h2>
           </div>
         </CollapseButton>
 
