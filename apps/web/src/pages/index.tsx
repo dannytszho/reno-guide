@@ -22,14 +22,19 @@ const Home: NextPage = () => {
         </div>
         <div className="flex flex-col gap-4 mt-20 m-5">
           <LongButton>
-            <BeerIcon />
-            <h1></h1>
+            <div className="p-3">
+              <BeerIcon />
+            </div>
           </LongButton>
           <LongButton>
-            <DiningIcon />
+            <div className="p-3">
+              <DiningIcon />
+            </div>
           </LongButton>
           <LongButton>
-            <PoolBallIcon />
+            <div className="p-3">
+              <PoolBallIcon />
+            </div>
           </LongButton>
         </div>
       </div>
