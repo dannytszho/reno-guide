@@ -31,7 +31,12 @@ const Details = ({
         </div>
         <div className="flex m-3">
           <LocationIcon />
-          <a href={addressUrl} className="ml-2 hover:text-blue-300">
+          <a
+            href={addressUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="ml-2 hover:text-blue-300"
+          >
             {address}
           </a>
         </div>
