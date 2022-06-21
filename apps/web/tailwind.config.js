@@ -6,7 +6,10 @@ module.exports = {
     '../storybook/stories/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    fontFamily: {
+      iceland: ['Iceland'],
+    },
     extend: {},
   },
-  plugins: [],
+  plugins: [require('daisyui')],
 }

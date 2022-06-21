@@ -1,6 +1,6 @@
 const UploadIcon = () => {
   return (
-    <div className="m-auto p-3">
+    <div className="m-auto p-2.5">
       <svg
         version="1.1"
         id="Capa_1"
