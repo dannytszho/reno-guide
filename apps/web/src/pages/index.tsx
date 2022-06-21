@@ -55,6 +55,7 @@ const detailsMap = [
 const Home: NextPage = () => {
   return (
     <>
+      {/* Hero section */}
       <div className="flex flex-col">
         <div className="flex m-5 justify-end">
           <SquareButton>
@@ -68,6 +69,8 @@ const Home: NextPage = () => {
           · Reno · Lake Tahoe ·
         </h2>
       </div>
+
+      {/* Food and Drinks section */}
       <section className="grid gap-4 justify-center m-10 font-iceland">
         <p className="flex justify-center text-2xl m-2 whitespace-pre">
           ↓{'  '}Food & Drinks{'  '}↓
@@ -104,6 +107,10 @@ const Home: NextPage = () => {
             <PoolBallIcon />
           </div>
         </LongButton>
+      </section>
+      {/* Footer section */}
+      <section className="text-center text-xs">
+        <h3>&copy; 2022 Danny Tsui. All rights reserved.</h3>
       </section>
     </>
   )
