@@ -13,7 +13,7 @@ export const resolvers = {
       },
       {
         id: '2',
-        name: 'Galena Creek Trai',
+        name: 'Galena Creek Trail',
         length: '4.7 mi',
         elevation: '774 ft',
         duration: 'Est. 2h 9m',

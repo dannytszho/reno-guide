@@ -8,6 +8,7 @@ import DiningIcon from '../public/svg/DiningIcon'
 import PoolBallIcon from '../public/svg/PoolBallIcon'
 import type { NextPage } from 'next'
 import UploadIcon from '../public/svg/UploadIcon'
+import KayakIcon from '../public/svg/KayakIcon'
 import Details from 'ui/Details'
 import Depot from '../public/TheDepot.png'
 import Louis from '../public/Louis.png'
@@ -73,7 +74,7 @@ const Home: NextPage = () => {
       {/* Food and Drinks section */}
       <section className="grid gap-4 justify-center m-10 font-iceland">
         <p className="flex justify-center text-2xl m-2 whitespace-pre">
-          ↓{'  '}Food & Drinks{'  '}↓
+          ↓{'   '}Food & Drinks{'   '}↓
         </p>
 
         {detailsMap.map(place => (
@@ -96,16 +97,26 @@ const Home: NextPage = () => {
             </div>
           </CollapseButton>
         ))}
+      </section>
 
+      {/* Food and Drinks section */}
+      <section className="grid gap-4 justify-center m-10 font-iceland">
+        <p className="flex justify-center text-2xl m-2 whitespace-pre">
+          ↓{'   '}Activities{'   '}↓
+        </p>
         <LongButton>
-          <div className="p-3">
-            <DiningIcon />
-          </div>
-        </LongButton>
-        <LongButton>
-          <div className="p-3">
-            <PoolBallIcon />
-          </div>
+          <a
+            href="http://www.raftingreno.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className="flex">
+              <div className="pl-4">
+                <KayakIcon />
+              </div>
+              <h2 className="text-2xl mx-auto">Whitewater Rafting</h2>
+            </div>
+          </a>
         </LongButton>
       </section>
       {/* Footer section */}
