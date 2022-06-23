@@ -9,6 +9,7 @@ import PoolBallIcon from '../public/svg/PoolBallIcon'
 import type { NextPage } from 'next'
 import UploadIcon from '../public/svg/UploadIcon'
 import KayakIcon from '../public/svg/KayakIcon'
+import CoffeeIcon from '../public/svg/CoffeeIcon'
 import Details from 'ui/Details'
 import Depot from '../public/TheDepot.png'
 import Louis from '../public/Louis.png'
@@ -99,9 +100,9 @@ const Home: NextPage = () => {
         ))}
       </section>
 
-      {/* Food and Drinks section */}
+      {/* Activities section */}
       <section className="grid gap-4 justify-center m-10 font-iceland">
-        <p className="flex justify-center text-2xl m-2 whitespace-pre">
+        <p className="flex justify-center text-2xl whitespace-pre">
           ↓{'   '}Activities{'   '}↓
         </p>
         <LongButton>
@@ -115,6 +116,26 @@ const Home: NextPage = () => {
                 <KayakIcon />
               </div>
               <h2 className="text-2xl mx-auto">Whitewater Rafting</h2>
+            </div>
+          </a>
+        </LongButton>
+      </section>
+
+      <section className="grid gap-4 justify-center m-10 font-iceland">
+        <p className="flex justify-center text-2xl whitespace-pre">
+          ↓{'   '}Tip Jar{'   '}↓
+        </p>
+        <LongButton>
+          <a
+            href="https://www.buymeacoffee.com/dannytszho"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className="flex">
+              <div className="pl-4">
+                <CoffeeIcon />
+              </div>
+              <h2 className="text-2xl mx-auto">Buy me a Coffee</h2>
             </div>
           </a>
         </LongButton>
