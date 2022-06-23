@@ -10,6 +10,7 @@ import type { NextPage } from 'next'
 import UploadIcon from '../public/svg/UploadIcon'
 import KayakIcon from '../public/svg/KayakIcon'
 import CoffeeIcon from '../public/svg/CoffeeIcon'
+import DowntownIcon from '../public/svg/DowntownIcon'
 import Details from 'ui/Details'
 import Depot from '../public/TheDepot.png'
 import Louis from '../public/Louis.png'
@@ -119,8 +120,19 @@ const Home: NextPage = () => {
             </div>
           </a>
         </LongButton>
+        <LongButton>
+          <a href="https://downtownreno.org/" target="_blank" rel="noreferrer">
+            <div className="flex">
+              <div className="pl-4">
+                <DowntownIcon />
+              </div>
+              <h2 className="text-2xl mx-auto">Reno Downtown</h2>
+            </div>
+          </a>
+        </LongButton>
       </section>
 
+      {/* Tip section */}
       <section className="grid gap-4 justify-center m-10 font-iceland">
         <p className="flex justify-center text-2xl whitespace-pre">
           ↓{'   '}Tip Jar{'   '}↓
