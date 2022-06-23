@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import Head from 'next/head'
 import Nevada from '../public/Nevada.png'
 import { LongButton } from 'ui/Button'
 import { SquareButton } from 'ui/Button'
@@ -60,6 +61,11 @@ const detailsMap = [
 const Home: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>🌎 Reno & Lake Tahoe </title>
+        <meta name="description" content="Meta description for the Home page" />
+      </Head>
+
       {/* Hero section */}
       <div className="flex flex-col">
         <div className="flex m-5 justify-end">
