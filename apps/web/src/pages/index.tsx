@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import Nevada from '../public/Nevada.png'
 import { LongButton } from 'ui/Button'
 import { SquareButton } from 'ui/Button'
@@ -132,14 +133,14 @@ const Home: NextPage = () => {
           </a>
         </LongButton>
         <LongButton>
-          <a href="https://downtownreno.org/" target="_blank" rel="noreferrer">
+          <Link href="/hikingtrails">
             <div className="flex">
               <div className="pl-4">
                 <HikerIcon />
               </div>
-              <h2 className="text-2xl mx-auto">Hiking</h2>
+              <a className="text-2xl mx-auto">Hiking</a>
             </div>
-          </a>
+          </Link>
         </LongButton>
       </section>
 
@@ -164,9 +165,9 @@ const Home: NextPage = () => {
         </LongButton>
       </section>
       {/* Footer section */}
-      <section className="text-center text-xs">
+      <footer className="text-center text-xs">
         <h3>&copy; 2022 Danny Tsui. All rights reserved.</h3>
-      </section>
+      </footer>
     </>
   )
 }
