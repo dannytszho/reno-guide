@@ -2,7 +2,7 @@ import React from 'react'
 
 export const LongButton = ({ children }: { children: React.ReactNode }) => {
   return (
-    <button className="w-[355px] md:w-[650px] h-[60px] border rounded-lg bg-zinc-200 hover:cursor-pointer">
+    <button className="w-[355px] md:w-[650px] h-[60px] border rounded-lg bg-zinc-200 hover:cursor-pointer hover:scale-[102%]">
       <h2>{children}</h2>
     </button>
   )
@@ -10,7 +10,7 @@ export const LongButton = ({ children }: { children: React.ReactNode }) => {
 
 export const SquareButton = ({ children }: { children: React.ReactNode }) => {
   return (
-    <button className="w-[45px] h-[45px] border rounded-lg bg-zinc-200 hover:cursor-pointer">
+    <button className="w-[45px] h-[45px] border rounded-lg bg-zinc-200 hover:cursor-pointer hover:scale-[103%]">
       <h2>{children}</h2>
     </button>
   )
@@ -24,7 +24,7 @@ export const CollapseButton = ({
   details: any
 }) => {
   return (
-    <div className="collapse collapse-arrow w-[355px] md:w-[650px] border bg-zinc-200 rounded-lg hover:">
+    <div className="collapse collapse-arrow w-[355px] md:w-[650px] border bg-zinc-200 rounded-lg hover:scale-[102%]">
       <input type="checkbox" />
       <div className="collapse-title text-xl font-medium">
         <h2>{children}</h2>

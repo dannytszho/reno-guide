@@ -15,6 +15,7 @@ import Details from 'ui/Details'
 import Depot from '../public/TheDepot.png'
 import Louis from '../public/Louis.png'
 import Genoa from '../public/Genoa.png'
+import HikerIcon from '../public/svg/HikerIcon'
 
 const detailsMap = [
   {
@@ -127,6 +128,16 @@ const Home: NextPage = () => {
                 <DowntownIcon />
               </div>
               <h2 className="text-2xl mx-auto">Reno Downtown</h2>
+            </div>
+          </a>
+        </LongButton>
+        <LongButton>
+          <a href="https://downtownreno.org/" target="_blank" rel="noreferrer">
+            <div className="flex">
+              <div className="pl-4">
+                <HikerIcon />
+              </div>
+              <h2 className="text-2xl mx-auto">Hiking</h2>
             </div>
           </a>
         </LongButton>
