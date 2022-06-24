@@ -1,16 +1,26 @@
 import Link from 'next/link'
 import Head from 'next/head'
-import type { NextPage, GetStaticProps } from 'next'
-import { gql, useQuery } from '@apollo/client'
+import type { GetServerSideProps } from 'next'
+import { gql } from '@apollo/client'
 import { apolloClient } from '../../lib/apolloClient'
 import ErrorPage from 'next/error'
 import { SquareButton } from 'ui'
 import LeftArrowIcon from '../public/svg/LeftArrowIcon'
 
-type Data = {
+export interface TrailsType {
+  __typename: String
   id: String
   name: String
+  length: String
+  elevation: String
+  duration: String
   difficulty: String
+  rating: String
+  url: String
+}
+
+interface Props {
+  allTrails: TrailsType[]
 }
 
 const GET_ALL_TRAILS = gql`
@@ -28,15 +38,7 @@ const GET_ALL_TRAILS = gql`
   }
 `
 
-const Hikingtrails = () => {
-  const { data, error, loading } = useQuery(GET_ALL_TRAILS)
-
-  console.log(data)
-
-  if (loading) return <p>Loading...</p>
-
-  if (error) return <p>Something went wrong! {error.message} </p>
-
+const Hikingtrails = ({ allTrails }: Props) => {
   return (
     <>
       <Head>
@@ -53,7 +55,7 @@ const Hikingtrails = () => {
             </Link>
           </SquareButton>
         </div>
-        {data.trails.map(trail => (
+        {allTrails.map(trail => (
           <>
             <h2 className="text-black">{trail.id}</h2>
             <h2>{trail.name}</h2>
@@ -67,16 +69,14 @@ const Hikingtrails = () => {
   )
 }
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   const { data } = await apolloClient.query({
-//     query: GET_ALL_TRAILS,
-//   })
+export const getServerSideProps: GetServerSideProps = async () => {
+  const { data } = await apolloClient.query({
+    query: GET_ALL_TRAILS,
+  })
 
-//   console.log(data)
-
-//   return {
-//     props: { data },
-//   }
-// }
+  return {
+    props: { allTrails: data.trails },
+  }
+}
 
 export default Hikingtrails
