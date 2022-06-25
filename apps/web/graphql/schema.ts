@@ -9,6 +9,7 @@ export const typeDefs = gql`
     duration: String
     difficulty: String
     rating: String
+    imageUrl: String
     url: String
   }
   type Query {

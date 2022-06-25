@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import Head from 'next/head'
 import Nevada from '../public/Nevada.png'
 import { LongButton } from 'ui/Button'
 import { SquareButton } from 'ui/Button'
@@ -8,10 +10,14 @@ import DiningIcon from '../public/svg/DiningIcon'
 import PoolBallIcon from '../public/svg/PoolBallIcon'
 import type { NextPage } from 'next'
 import UploadIcon from '../public/svg/UploadIcon'
+import KayakIcon from '../public/svg/KayakIcon'
+import CoffeeIcon from '../public/svg/CoffeeIcon'
+import DowntownIcon from '../public/svg/DowntownIcon'
 import Details from 'ui/Details'
 import Depot from '../public/TheDepot.png'
 import Louis from '../public/Louis.png'
 import Genoa from '../public/Genoa.png'
+import HikerIcon from '../public/svg/HikerIcon'
 
 const detailsMap = [
   {
@@ -55,6 +61,11 @@ const detailsMap = [
 const Home: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>🌎 Reno & Lake Tahoe </title>
+        <meta name="description" content="Meta description for the Home page" />
+      </Head>
+
       {/* Hero section */}
       <div className="flex flex-col">
         <div className="flex m-5 justify-end">
@@ -73,7 +84,7 @@ const Home: NextPage = () => {
       {/* Food and Drinks section */}
       <section className="grid gap-4 justify-center m-10 font-iceland">
         <p className="flex justify-center text-2xl m-2 whitespace-pre">
-          ↓{'  '}Food & Drinks{'  '}↓
+          ↓{'   '}Food & Drinks{'   '}↓
         </p>
 
         {detailsMap.map(place => (
@@ -96,22 +107,73 @@ const Home: NextPage = () => {
             </div>
           </CollapseButton>
         ))}
+      </section>
 
+      {/* Activities section */}
+      <section className="grid gap-4 justify-center m-10 font-iceland">
+        <p className="flex justify-center text-2xl whitespace-pre">
+          ↓{'   '}Activities{'   '}↓
+        </p>
         <LongButton>
-          <div className="p-3">
-            <DiningIcon />
-          </div>
+          <a
+            href="http://www.raftingreno.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className="flex">
+              <div className="pl-4">
+                <KayakIcon />
+              </div>
+              <h2 className="text-2xl mx-auto">Whitewater Rafting</h2>
+            </div>
+          </a>
         </LongButton>
         <LongButton>
-          <div className="p-3">
-            <PoolBallIcon />
-          </div>
+          <a href="https://downtownreno.org/" target="_blank" rel="noreferrer">
+            <div className="flex">
+              <div className="pl-4">
+                <DowntownIcon />
+              </div>
+              <h2 className="text-2xl mx-auto">Reno Downtown</h2>
+            </div>
+          </a>
+        </LongButton>
+        <LongButton>
+          <Link href="/hikingtrails">
+            <div className="flex">
+              <div className="pl-4">
+                <HikerIcon />
+              </div>
+              <a className="text-2xl mx-auto">Hiking</a>
+            </div>
+          </Link>
+        </LongButton>
+      </section>
+
+      {/* Tip section */}
+      <section className="grid gap-4 justify-center m-10 font-iceland">
+        <p className="flex justify-center text-2xl whitespace-pre">
+          ↓{'   '}Tip Jar{'   '}↓
+        </p>
+        <LongButton>
+          <a
+            href="https://www.buymeacoffee.com/dannytszho"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className="flex">
+              <div className="pl-4">
+                <CoffeeIcon />
+              </div>
+              <h2 className="text-2xl mx-auto">Buy me a Coffee</h2>
+            </div>
+          </a>
         </LongButton>
       </section>
       {/* Footer section */}
-      <section className="text-center text-xs">
+      <footer className="text-center text-xs">
         <h3>&copy; 2022 Danny Tsui. All rights reserved.</h3>
-      </section>
+      </footer>
     </>
   )
 }

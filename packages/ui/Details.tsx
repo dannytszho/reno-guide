@@ -2,7 +2,6 @@ import Image from 'next/image'
 import LocationIcon from '../../apps/web/src/public/svg/LocationIcon'
 import PhoneIcon from '../../apps/web/src/public/svg/PhoneIcon'
 import HyperLinkIcon from '../../apps/web/src/public/svg/HyperLinkIcon'
-import GoogleMap from 'ui/GoogleMap'
 
 interface Props {
   pic: any
