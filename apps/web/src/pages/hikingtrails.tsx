@@ -59,7 +59,7 @@ const Hikingtrails = ({ allTrails }: Props) => {
           </SquareButton>
         </div>
 
-        <div>
+        <div className="grid justify-center">
           {allTrails.map(trail => (
             <TrailsCard
               name={trail.name}
