@@ -42,7 +42,6 @@ const GET_ALL_TRAILS = gql`
 `
 
 const Hikingtrails = ({ allTrails }: Props) => {
-  console.log(allTrails)
   return (
     <>
       <Head>
@@ -64,8 +63,13 @@ const Hikingtrails = ({ allTrails }: Props) => {
           {allTrails.map(trail => (
             <TrailsCard
               name={trail.name}
+              length={trail.length}
+              elevation={trail.elevation}
               image={trail.imageUrl}
-              difficuity={trail.difficulty}
+              difficulty={trail.difficulty}
+              rating={trail.rating}
+              duration={trail.duration}
+              urL={trail.url}
             />
           ))}
         </div>
