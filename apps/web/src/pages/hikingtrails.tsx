@@ -61,20 +61,20 @@ const Hikingtrails = ({ allTrails }: Props) => {
 
         <div className="grid justify-center">
           {allTrails.map(trail => (
-            <TrailsCard
-              name={trail.name}
-              length={trail.length}
-              elevation={trail.elevation}
-              image={trail.imageUrl}
-              difficulty={trail.difficulty}
-              rating={trail.rating}
-              duration={trail.duration}
-              urL={trail.url}
-            />
+            <>
+              <TrailsCard
+                name={trail.name}
+                length={trail.length}
+                elevation={trail.elevation}
+                image={trail.imageUrl}
+                difficulty={trail.difficulty}
+                rating={<Rating rating={parseFloat(trail.rating)} />}
+                duration={trail.duration}
+                urL={trail.url}
+              />
+            </>
           ))}
         </div>
-
-        <Rating value={2} />
 
         <footer className="text-center text-xs">
           <h3>&copy; 2022 Danny Tsui. All rights reserved.</h3>

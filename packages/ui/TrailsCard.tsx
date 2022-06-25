@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { ReactElement } from 'react'
 
 interface Props {
   name: string
@@ -6,7 +7,7 @@ interface Props {
   elevation: string
   duration: string
   difficulty: string
-  rating: string
+  rating: ReactElement
   image: string
   urL: string
 }

@@ -1,23 +1,17 @@
-const Ratings = ({ value }: { value: number }) => {
+import { FaStar, FaStarHalfAlt } from 'react-icons/fa'
+const Rating = ({ rating }: { rating: number }) => {
+  const totalRating = 5
   return (
-    <div>
-      {[...Array(5)].map(ind => {
-        // you just use indice here
-        return (
-          <span key={ind}>
-            <i
-              className={
-                value >= ind + 1
-                  ? 'fas fa-star'
-                  : value >= ind + 0.5
-                  ? 'fas fa-star-half-alt'
-                  : 'far fa-star'
-              }
-            ></i>
-          </span>
+    <div className="flex relative">
+      {[...Array(totalRating)].map((star, i) => {
+        return i < rating ? (
+          <FaStar color={'#ffc107'} />
+        ) : (
+          <FaStar color={'#e4e5e9'} />
         )
       })}
     </div>
   )
 }
-export default Ratings
+
+export default Rating
