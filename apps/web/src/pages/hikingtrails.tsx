@@ -6,7 +6,7 @@ import { apolloClient } from '../../lib/apolloClient'
 import { SquareButton } from 'ui'
 import LeftArrowIcon from '../public/svg/LeftArrowIcon'
 import TrailsCard from 'ui/TrailsCard'
-import Image from 'next/image'
+import Rating from 'ui/Rating'
 
 export interface TrailsType {
   __typename: string
@@ -73,6 +73,8 @@ const Hikingtrails = ({ allTrails }: Props) => {
             />
           ))}
         </div>
+
+        <Rating value={2} />
 
         <footer className="text-center text-xs">
           <h3>&copy; 2022 Danny Tsui. All rights reserved.</h3>
