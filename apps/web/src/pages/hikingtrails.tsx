@@ -3,20 +3,22 @@ import Head from 'next/head'
 import type { GetServerSideProps } from 'next'
 import { gql } from '@apollo/client'
 import { apolloClient } from '../../lib/apolloClient'
-import ErrorPage from 'next/error'
 import { SquareButton } from 'ui'
 import LeftArrowIcon from '../public/svg/LeftArrowIcon'
+import TrailsCard from 'ui/TrailsCard'
+import Image from 'next/image'
 
 export interface TrailsType {
-  __typename: String
-  id: String
-  name: String
-  length: String
-  elevation: String
-  duration: String
-  difficulty: String
-  rating: String
-  url: String
+  __typename: string
+  id: string
+  name: string
+  length: string
+  elevation: string
+  duration: string
+  difficulty: string
+  rating: string
+  imageUrl: string
+  url: string
 }
 
 interface Props {
@@ -34,11 +36,13 @@ const GET_ALL_TRAILS = gql`
       difficulty
       rating
       url
+      imageUrl
     }
   }
 `
 
 const Hikingtrails = ({ allTrails }: Props) => {
+  console.log(allTrails)
   return (
     <>
       <Head>
@@ -55,12 +59,17 @@ const Hikingtrails = ({ allTrails }: Props) => {
             </Link>
           </SquareButton>
         </div>
-        {allTrails.map(trail => (
-          <>
-            <h2 className="text-black">{trail.id}</h2>
-            <h2>{trail.name}</h2>
-          </>
-        ))}
+
+        <div>
+          {allTrails.map(trail => (
+            <TrailsCard
+              name={trail.name}
+              image={trail.imageUrl}
+              difficuity={trail.difficulty}
+            />
+          ))}
+        </div>
+
         <footer className="text-center text-xs">
           <h3>&copy; 2022 Danny Tsui. All rights reserved.</h3>
         </footer>
