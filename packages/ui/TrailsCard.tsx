@@ -1,15 +1,22 @@
 import Image from 'next/image'
 import { ReactElement } from 'react'
+import { AiOutlineClockCircle } from 'react-icons/ai'
 
 interface Props {
   name: string
   length: string
   elevation: string
   duration: string
-  difficulty: string
+  difficulty: 'easy' | 'moderate' | 'hard'
   rating: ReactElement
   image: string
   urL: string
+}
+
+const colorMap = {
+  easy: 'bg-green-200',
+  moderate: 'bg-green-500',
+  hard: 'bg-red-400',
 }
 
 const TrailsCard = ({
@@ -27,13 +34,23 @@ const TrailsCard = ({
       <a href={urL} target="_blank" rel="noreferrer">
         <Image src={image} alt="placeholder" width="300px" height="168px" />
         <div className="flex justify-between mx-3">
-          <span className="rounded-lg px-2 bg-green-400">{difficulty}</span>
+          <span
+            className={['rounded-lg px-2', `${colorMap[difficulty]}`].join(' ')}
+          >
+            {difficulty}
+          </span>
           <span>{length}</span>
         </div>
         <div className="font-bold text-2xl text-center">{name}</div>
-        <div>Elevation: {elevation}</div>
+        <div className="text-center whitespace-pre">
+          Elevation:{'   '}
+          {elevation}
+        </div>
         <div className="flex justify-between mx-3">
-          <span>{duration}</span>
+          <span className="flex">
+            <AiOutlineClockCircle size={15} className="mt-1 mr-1" />
+            {duration}
+          </span>
           <span>{rating}</span>
         </div>
       </a>
