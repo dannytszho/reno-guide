@@ -7,7 +7,7 @@ import { SquareButton } from 'ui/Button'
 import { CollapseButton } from 'ui/Button'
 import BeerIcon from '../public/svg/BeerIcon'
 import DiningIcon from '../public/svg/DiningIcon'
-import PoolBallIcon from '../public/svg/PoolBallIcon'
+//import PoolBallIcon from '../public/svg/PoolBallIcon'
 import type { NextPage } from 'next'
 import UploadIcon from '../public/svg/UploadIcon'
 import KayakIcon from '../public/svg/KayakIcon'
@@ -47,7 +47,7 @@ const detailsMap = [
   },
   {
     name: 'Genoa Bar and Saloon',
-    icon: <PoolBallIcon />,
+    icon: <DiningIcon />,
     pic: Genoa,
     address: '2282 MAIN ST, GENOA, NV 89411',
     addressUrl:
@@ -63,7 +63,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>🌎 Reno & Lake Tahoe. </title>
+        <title>🌎 Reno & Lake Tahoe </title>
         <meta name="description" content="Meta description for the Home page" />
       </Head>
 
