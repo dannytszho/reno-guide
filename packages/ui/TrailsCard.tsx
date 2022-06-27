@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { ReactElement } from 'react'
 import { AiOutlineClockCircle } from 'react-icons/ai'
 
-interface Props {
+export interface CardProps {
   name: string
   length: string
   elevation: string
@@ -13,10 +13,11 @@ interface Props {
   urL: string
 }
 
-const colorMap = {
+export const colorMap = {
   Easy: 'bg-yellow-300',
   Moderate: 'bg-green-400',
   Hard: 'bg-red-400',
+  All: 'bg-gray-200',
 }
 
 const TrailsCard = ({
@@ -28,7 +29,7 @@ const TrailsCard = ({
   duration,
   rating,
   urL,
-}: Props) => {
+}: CardProps) => {
   return (
     <div className="bg-white font-iceland text-black m-10 rounded-xl overflow-hidden shadow-lg w-[300px] hover:scale-105 hover:tansition hover:duration-200">
       <a href={urL} target="_blank" rel="noreferrer">
