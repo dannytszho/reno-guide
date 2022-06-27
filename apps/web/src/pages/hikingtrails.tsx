@@ -8,6 +8,7 @@ import { SquareButton } from 'ui'
 import LeftArrowIcon from '../public/svg/LeftArrowIcon'
 import TrailsCard from 'ui/TrailsCard'
 import Rating from 'ui/Rating'
+import Footer from 'ui/Footer'
 
 export interface TrailsType {
   __typename: string
@@ -115,11 +116,8 @@ const Hikingtrails = ({ allTrails }: Props) => {
             </>
           ))}
         </div>
-
-        <footer className="text-center text-xs">
-          <h3>&copy; 2022 Danny Tsui. All rights reserved.</h3>
-        </footer>
       </div>
+      <Footer />
     </>
   )
 }

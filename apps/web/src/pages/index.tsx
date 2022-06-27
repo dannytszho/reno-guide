@@ -18,6 +18,7 @@ import Depot from '../public/TheDepot.png'
 import Louis from '../public/Louis.png'
 import Genoa from '../public/Genoa.png'
 import HikerIcon from '../public/svg/HikerIcon'
+import Footer from 'ui/Footer'
 
 const detailsMap = [
   {
@@ -172,9 +173,7 @@ const Home: NextPage = () => {
         </LongButton>
       </section>
       {/* Footer section */}
-      <footer className="text-center text-xs">
-        <h3>&copy; 2022 Danny Tsui. All rights reserved.</h3>
-      </footer>
+      <Footer />
     </>
   )
 }
