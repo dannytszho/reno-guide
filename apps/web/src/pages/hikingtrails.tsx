@@ -104,6 +104,7 @@ const Hikingtrails = ({ allTrails }: Props) => {
           {showList?.map(trail => (
             <>
               <TrailsCard
+                key={trail.id}
                 name={trail.name}
                 length={trail.length}
                 elevation={trail.elevation}
