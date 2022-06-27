@@ -7,16 +7,16 @@ interface Props {
   length: string
   elevation: string
   duration: string
-  difficulty: 'easy' | 'moderate' | 'hard'
+  difficulty: 'Easy' | 'Moderate' | 'Hard'
   rating: ReactElement
   image: string
   urL: string
 }
 
 const colorMap = {
-  easy: 'bg-green-200',
-  moderate: 'bg-green-500',
-  hard: 'bg-red-400',
+  Easy: 'bg-yellow-300',
+  Moderate: 'bg-green-400',
+  Hard: 'bg-red-400',
 }
 
 const TrailsCard = ({

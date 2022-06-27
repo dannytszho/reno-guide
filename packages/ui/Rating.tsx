@@ -1,26 +1,4 @@
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa'
-// const Rating = ({ rating }: { rating: number }) => {
-//   const totalRating = 5
-
-//   return (
-//     <div className="flex relative">
-//       {[...Array(totalRating)].map((star, i) => {
-//         return (
-//           <>
-//             <div className="relative inline-flex">
-//               <div className="w-[100%] i overflow-hidden absolute">
-//                 <FaStar color={'#ffc107'} />
-//               </div>
-//               <div>
-//                 <FaStar color={'#e4e5e9'} />
-//               </div>
-//             </div>
-//           </>
-//         )
-//       })}
-//     </div>
-//   )
-// }
 
 const Rating = ({ rating }: { rating: number }) => {
   return (

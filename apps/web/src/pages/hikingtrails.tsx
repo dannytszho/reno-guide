@@ -7,6 +7,7 @@ import { SquareButton } from 'ui'
 import LeftArrowIcon from '../public/svg/LeftArrowIcon'
 import TrailsCard from 'ui/TrailsCard'
 import Rating from 'ui/Rating'
+import FilterOptions from 'ui/FilterOptions'
 
 export interface TrailsType {
   __typename: string
@@ -15,7 +16,7 @@ export interface TrailsType {
   length: string
   elevation: string
   duration: string
-  difficulty: string
+  difficulty: 'Easy' | 'Moderate' | 'Hard'
   rating: string
   imageUrl: string
   url: string
@@ -58,6 +59,9 @@ const Hikingtrails = ({ allTrails }: Props) => {
             </Link>
           </SquareButton>
         </div>
+
+        {/* Filter section */}
+        <FilterOptions />
 
         <div className="grid justify-center">
           {allTrails.map(trail => (
