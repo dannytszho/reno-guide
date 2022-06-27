@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Head from 'next/head'
+import { useState } from 'react'
 import type { GetServerSideProps } from 'next'
 import { gql } from '@apollo/client'
 import { apolloClient } from '../../lib/apolloClient'
@@ -7,7 +8,6 @@ import { SquareButton } from 'ui'
 import LeftArrowIcon from '../public/svg/LeftArrowIcon'
 import TrailsCard from 'ui/TrailsCard'
 import Rating from 'ui/Rating'
-import FilterOptions from 'ui/FilterOptions'
 
 export interface TrailsType {
   __typename: string
@@ -24,6 +24,7 @@ export interface TrailsType {
 
 interface Props {
   allTrails: TrailsType[]
+  displayedTrails: TrailsType[]
 }
 
 const GET_ALL_TRAILS = gql`
@@ -43,6 +44,15 @@ const GET_ALL_TRAILS = gql`
 `
 
 const Hikingtrails = ({ allTrails }: Props) => {
+  const [showList, setShowList] = useState<TrailsType[] | undefined>(allTrails)
+
+  const filterTrails = (level: any) => {
+    const trail = allTrails.filter(cur => {
+      return cur.difficulty === level
+    })
+    setShowList(trail)
+  }
+
   return (
     <>
       <Head>
@@ -61,10 +71,36 @@ const Hikingtrails = ({ allTrails }: Props) => {
         </div>
 
         {/* Filter section */}
-        <FilterOptions />
+
+        <div className="mt-10 flex justify-center text-black space-x-4">
+          <button
+            onClick={() => filterTrails('Easy')}
+            className="rounded-lg px-3 py-2 bg-yellow-300"
+          >
+            Easy
+          </button>
+          <button
+            onClick={() => filterTrails('Moderate')}
+            className="rounded-lg px-3 py-2 bg-green-400"
+          >
+            Moderate
+          </button>
+          <button
+            onClick={() => filterTrails('Hard')}
+            className="rounded-lg px-4 py-2 bg-red-400"
+          >
+            Hard
+          </button>
+          <button
+            onClick={() => setShowList(allTrails)}
+            className="rounded-lg px-4 py-2 bg-gray-200"
+          >
+            All
+          </button>
+        </div>
 
         <div className="grid justify-center">
-          {allTrails.map(trail => (
+          {showList?.map(trail => (
             <>
               <TrailsCard
                 name={trail.name}
