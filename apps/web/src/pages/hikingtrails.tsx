@@ -49,7 +49,7 @@ const Hikingtrails = ({ allTrails }: Props) => {
         <title>🗻 Trails - Reno & Lake Tahoe</title>
         <meta name="description" content="Meta description for the Home page" />
       </Head>
-      <div className="flex flex-col">
+      <div className="flex flex-col font-iceland">
         <div className="flex m-5 justify-start">
           <SquareButton>
             <Link href="/">
