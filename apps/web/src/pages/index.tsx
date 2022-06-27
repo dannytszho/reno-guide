@@ -63,7 +63,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>🌎 Reno & Lake Tahoe </title>
+        <title>🌎 Reno & Lake Tahoe. </title>
         <meta name="description" content="Meta description for the Home page" />
       </Head>
 
