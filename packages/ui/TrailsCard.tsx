@@ -1,14 +1,22 @@
 import Image from 'next/image'
+import { ReactElement } from 'react'
+import { AiOutlineClockCircle } from 'react-icons/ai'
 
 interface Props {
   name: string
   length: string
   elevation: string
   duration: string
-  difficulty: string
-  rating: string
+  difficulty: 'Easy' | 'Moderate' | 'Hard'
+  rating: ReactElement
   image: string
   urL: string
+}
+
+const colorMap = {
+  Easy: 'bg-yellow-300',
+  Moderate: 'bg-green-400',
+  Hard: 'bg-red-400',
 }
 
 const TrailsCard = ({
@@ -22,17 +30,29 @@ const TrailsCard = ({
   urL,
 }: Props) => {
   return (
-    <div className="bg-gray-300 font-iceland text-black m-10 rounded-xl overflow-hidden shadow-lg w-[300px] hover:scale-105 hover:tansition hover:duration-200">
+    <div className="bg-white font-iceland text-black m-10 rounded-xl overflow-hidden shadow-lg w-[300px] hover:scale-105 hover:tansition hover:duration-200">
       <a href={urL} target="_blank" rel="noreferrer">
         <Image src={image} alt="placeholder" width="300px" height="168px" />
         <div className="flex justify-between mx-3">
-          <span className="rounded-lg px-2 bg-green-400">{difficulty}</span>
+          <span
+            className={['rounded-lg px-2', `${colorMap[difficulty]}`].join(' ')}
+          >
+            {difficulty}
+          </span>
           <span>{length}</span>
         </div>
         <div className="font-bold text-2xl text-center">{name}</div>
-        <div>Elevation: {elevation}</div>
-        <div>{rating}</div>
-        <div>{duration}</div>
+        <div className="text-center whitespace-pre">
+          Elevation:{'   '}
+          {elevation}
+        </div>
+        <div className="flex justify-between mx-3">
+          <span className="flex">
+            <AiOutlineClockCircle size={15} className="mt-1 mr-1" />
+            {duration}
+          </span>
+          <span>{rating}</span>
+        </div>
       </a>
     </div>
   )

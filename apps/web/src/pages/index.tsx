@@ -89,6 +89,7 @@ const Home: NextPage = () => {
 
         {detailsMap.map(place => (
           <CollapseButton
+            key={place.name}
             details={
               <Details
                 pic={place.pic}

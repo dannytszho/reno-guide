@@ -6,7 +6,8 @@ import { apolloClient } from '../../lib/apolloClient'
 import { SquareButton } from 'ui'
 import LeftArrowIcon from '../public/svg/LeftArrowIcon'
 import TrailsCard from 'ui/TrailsCard'
-import Image from 'next/image'
+import Rating from 'ui/Rating'
+import FilterOptions from 'ui/FilterOptions'
 
 export interface TrailsType {
   __typename: string
@@ -15,7 +16,7 @@ export interface TrailsType {
   length: string
   elevation: string
   duration: string
-  difficulty: string
+  difficulty: 'Easy' | 'Moderate' | 'Hard'
   rating: string
   imageUrl: string
   url: string
@@ -48,7 +49,7 @@ const Hikingtrails = ({ allTrails }: Props) => {
         <title>🗻 Trails - Reno & Lake Tahoe</title>
         <meta name="description" content="Meta description for the Home page" />
       </Head>
-      <div className="flex flex-col">
+      <div className="flex flex-col font-iceland">
         <div className="flex m-5 justify-start">
           <SquareButton>
             <Link href="/">
@@ -59,18 +60,23 @@ const Hikingtrails = ({ allTrails }: Props) => {
           </SquareButton>
         </div>
 
+        {/* Filter section */}
+        <FilterOptions />
+
         <div className="grid justify-center">
           {allTrails.map(trail => (
-            <TrailsCard
-              name={trail.name}
-              length={trail.length}
-              elevation={trail.elevation}
-              image={trail.imageUrl}
-              difficulty={trail.difficulty}
-              rating={trail.rating}
-              duration={trail.duration}
-              urL={trail.url}
-            />
+            <>
+              <TrailsCard
+                name={trail.name}
+                length={trail.length}
+                elevation={trail.elevation}
+                image={trail.imageUrl}
+                difficulty={trail.difficulty}
+                rating={<Rating rating={parseFloat(trail.rating)} />}
+                duration={trail.duration}
+                urL={trail.url}
+              />
+            </>
           ))}
         </div>
 
