@@ -13,6 +13,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "cypress": "^10.3.0",
     "eslint-config-custom": "latest",
     "prettier": "latest",
     "turbo": "latest"
