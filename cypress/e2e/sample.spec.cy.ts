@@ -9,6 +9,6 @@
 //   - make an assertion about page content
 describe('Go to reno-guide', () => {
   it('should visit', () => {
-    cy.visit('http://localhost:3000')
+    cy.visit('/')
   })
 })
