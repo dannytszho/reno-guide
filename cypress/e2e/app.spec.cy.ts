@@ -8,7 +8,14 @@
 // Assert - make an assertion
 //   - make an assertion about page content
 describe('Go to reno-guide', () => {
-  it('should visit', () => {
+  beforeEach(() => {
     cy.visit('/')
+  })
+  it('should have a drop down button', () => {
+    cy.get('button').should('exist')
+  })
+  it('Should drop down after clicking', () => {
+    cy.get(':nth-child(2) > input').click()
+    cy.contains('thedepotreno.com')
   })
 })
