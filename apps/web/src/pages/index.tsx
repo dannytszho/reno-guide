@@ -69,11 +69,12 @@ const Home: NextPage = () => {
 
       {/* Hero section */}
       <div className="flex flex-col">
-        <div className="flex m-5 justify-end">
+        {/* Upload button */}
+        {/* <div className="flex m-5 justify-end">
           <SquareButton>
             <UploadIcon />
           </SquareButton>
-        </div>
+        </div> */}
         <div className="flex justify-center mt-20">
           <Image src={Nevada} alt="main" />
         </div>
